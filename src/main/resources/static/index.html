@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Demo</title>
+<style>
+table {
+	border-collapse: collapse;
+}
+
+table, th, td {
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Browser timer</th>
+            <th>Server timer</th>
+            <th>Server version</th>
+            <th>Request status</th>
+        </tr>
+        <tr>
+            <td id="browsertimer" />
+            <td id="servertimer" />
+            <td id="serverversion" />
+            <td id="serverstatus" />
+        </tr>
+    </table>
+
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+                    $(document).ready(function() {
+
+                        var myVar = setInterval(myTimer, 1000);
+
+                        function myTimer() {
+
+                            var d = new Date();
+
+                            $("#browsertimer").html(d.toLocaleTimeString());
+
+                            $.ajax({
+                                url : "time",
+                                error : function() {
+                                    $("#serverstatus").html("error");
+                                    $("#servertimer").html("-");
+                                    $("#serverversion").html("-");
+                                },
+                                success : function(data) {
+                                    $("#servertimer").html(data.time);
+                                    $("#serverversion").html(data.version);
+                                    $("#serverstatus").html("success");
+                                },
+                                timeout : 3000
+                            });
+                        }
+                    });
+                </script>
+</body>
+</html>
