@@ -13,6 +13,7 @@ phases:
       - mvn install
   post_build:
     commands:
+      - mvn deploy
       - echo Build completed on `date`
 artifacts:
   files:
