@@ -7,7 +7,6 @@ phases:
   pre_build:
     commands:
       - echo pre_build phase...
-      - ping -c5 pumpkin.ddns.net
   build:
     commands:
       - echo Build started on `date`
