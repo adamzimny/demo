@@ -1,5 +1,9 @@
 version: 0.2
 
+env:
+  parameter-store:
+    AWS_ACCESS_KEY_ID: mavenS3RepoAccessKeyId
+    AWS_SECRET_KEY: mavenS3RepoSecretKey
 phases:
   install:
     commands:
