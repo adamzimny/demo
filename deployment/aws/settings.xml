@@ -9,7 +9,8 @@
         <repository>
           <id>central</id>
           <!--url>http://central.maven.org/maven2</url-->
-          <url>https://maven-central.storage.googleapis.com/repos/central/data/</url>
+          <!--url>https://maven-central.storage.googleapis.com/repos/central/data/</url-->
+          <url>http://uk.maven.org/maven2/</url>
           <releases>
             <enabled>true</enabled>
           </releases>
@@ -19,7 +20,8 @@
         <pluginRepository>
           <id>central</id>
           <!--url>http://central.maven.org/maven2</url-->
-          <url>https://maven-central.storage.googleapis.com/repos/central/data/</url>
+          <!--url>https://maven-central.storage.googleapis.com/repos/central/data/</url-->
+          <url>http://uk.maven.org/maven2/</url>
           <releases>
             <enabled>true</enabled>
           </releases>
