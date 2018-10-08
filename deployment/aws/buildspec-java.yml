@@ -14,10 +14,10 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn install
+      - mvn -B install
   post_build:
     commands:
-      - mvn deploy
+      - mvn -B deploy -DskipTests
       - echo Build completed on `date`
 artifacts:
   files:
