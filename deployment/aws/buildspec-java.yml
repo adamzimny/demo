@@ -11,8 +11,10 @@ phases:
   pre_build:
     commands:
       - echo pre_build phase...
+      - pwd
+      - ls
       - echo "Fixing maven config to avoid occasional access denied issues"
-      - cp deployment/aws/settings.xml /root/.m2/settings.xml
+      - cp demo/deployment/aws/settings.xml /root/.m2/settings.xml
       - cat /root/.m2/settings.xml
   build:
     commands:
