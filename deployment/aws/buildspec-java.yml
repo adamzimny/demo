@@ -11,6 +11,7 @@ phases:
   pre_build:
     commands:
       - echo pre_build phase...
+      - rm /root/.m2/settings.xml
   build:
     commands:
       - echo Build started on `date`
